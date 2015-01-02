@@ -22,23 +22,21 @@ func Convert(s string, first bool) string {
 	}
 
 	s = strings.TrimSpace(s)
-
 	rs := ""
-	buf := []byte(s)
-	for i := 0; i < len(buf); i++ {
-		b := buf[i]
+
+	//rune
+	for _, b := range s {
 		if b < 0x80 {
-			if (b >= byte(48) && b <= byte(57)) ||
-				(b >= byte(97) && b <= byte(122)) {
+			if (b >= 48 && b <= 57) ||
+				(b >= 97 && b <= 122) {
 				rs += string(b)
-			} else if b >= byte(65) && b <= 90 {
+			} else if b >= 65 && b <= 90 {
 				rs += strings.ToLower(string(b))
 			} else {
 				rs += "_"
 			}
 		} else {
-			z := buf[i : i+3]
-			if v, ok := all[string(z)]; ok {
+			if v, ok := all[string(b)]; ok {
 				if first {
 					rs += string(v[0])
 				} else {
@@ -47,8 +45,6 @@ func Convert(s string, first bool) string {
 			} else {
 				rs += "_"
 			}
-
-			i += 2
 		}
 	}
 
