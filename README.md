@@ -23,7 +23,8 @@ import(
 )
 
 func main() {
-  fmt.Println(gopinyin.Convert(“Hello, 世界！”))
+  fmt.Println(gopinyin.Convert(“Hello, 世界！”, false))
+  fmt.Println(gopinyin.Convert(“您好世界”, true))
 }
 
 ```
