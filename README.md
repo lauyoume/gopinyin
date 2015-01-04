@@ -17,6 +17,8 @@ go get github.com/lauyoume/gopinyin
 例子
 
 ```go
+package main
+
 import(
   "github.com/lauyoume/gopinyin"
   "fmt"
