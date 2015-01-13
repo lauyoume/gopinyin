@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/lauyoume/gopinyin"
-	"unicode/utf8"
 )
 
 func main() {
